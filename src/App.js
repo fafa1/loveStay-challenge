@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react';
+import { api } from './services/api'
+import { Search } from './components/Search'
+import { CardUser } from './components/CardUser';
 
-function App() {
+export function App() {
+  // useEffect(() => {
+  //   (async () => {
+  //   const result = await api.get('/users/fafa1')
+  //   console.log(result.data)
+  // }
+ 
+  // )()
+  // }, [ ])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Search />
     </div>
   );
 }
 
-export default App;

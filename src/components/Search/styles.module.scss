@@ -1,0 +1,25 @@
+.containerBox {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 1120px;
+  margin: 0 auto;
+  margin-top: 50px;
+
+  .formSearch {
+    display: flex;
+    flex-direction: column;
+
+    button {
+      margin-top: 20px;
+      width: 50%;
+      align-self: center;
+    }
+
+  }
+}
+
+// .containerBody {
+//   max-width: 1120px;
+//   margin: 20px auto;
+// }
