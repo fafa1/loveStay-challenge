@@ -15,7 +15,6 @@ const initialState = {
 export const InformationUser = (state = initialState, action) => {
   switch (action.type) {
     case 'INFORMATION_USER':
-      debugger
       return action.payload;
     default:
       return state;

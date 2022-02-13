@@ -15,7 +15,6 @@ export const CardUser = ({ dataUser }) => {
   const navigate = useNavigate();
 
   const goInformation = (userInformation) => {
-    debugger
     if (userInformation) {
       dispatch(information(userInformation));
       return navigate('/page-user');
