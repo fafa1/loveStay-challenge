@@ -31,8 +31,6 @@ export const InformationUser = () => {
         const listRepositories = await api.get(resultFormater);
 
         setListRepo(listRepositories.data);
-
-        console.log(listRepositories.data, 'bora');
       }
     }
 

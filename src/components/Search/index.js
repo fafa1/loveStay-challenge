@@ -28,13 +28,11 @@ export const Search = () => {
       const result = await handleData();
 
       if (result.status === 200) {
-        console.log(result.data)
         setDataUser(result.data)
       }
 
     } catch (error) {
       alert('User could not be found!')
-      console.log(error)
 
     }
   }
