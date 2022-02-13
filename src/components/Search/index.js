@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback,  useState } from 'react';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 
@@ -10,14 +10,6 @@ export const Search = () => {
   const dataUserGit = {
     id: null,
     name: '',
-    bio: '',
-    login: '',
-    followers: 0,
-    company: '',
-    email: '',
-    location: '',
-    avatar_url: '',
-    public_repos: 0
   }
 
   const [name, setName] = useState('')
@@ -30,6 +22,8 @@ export const Search = () => {
   const submitSearch = async (e) => {
     e.preventDefault();
 
+    if(!name) return;
+
     try {
       const result = await handleData();
 
@@ -39,6 +33,7 @@ export const Search = () => {
       }
 
     } catch (error) {
+      alert('User could not be found!')
       console.log(error)
 
     }
@@ -51,11 +46,11 @@ export const Search = () => {
           <div className={styles.formSearch}>
             <TextField
               id="standard-basic"
-              label="Usuário"
+              label="User"
               variant="standard"
               value={name}
               onChange={(e) => setName(e.target.value)} />
-            <Button variant="contained" type="submit">Pesquisar</Button>
+            <Button variant="contained" type="submit">Search</Button>
           </div>
         </form>
 
@@ -65,7 +60,6 @@ export const Search = () => {
           }
         </div>
       </div>
-
     </>
   )
 

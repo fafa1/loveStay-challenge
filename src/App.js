@@ -1,20 +1,18 @@
-import React, { useEffect } from 'react';
-import { api } from './services/api'
-import { Search } from './components/Search'
-import { CardUser } from './components/CardUser';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Search } from './components/Search';
+import { InformationUser } from './components/InformatioUser';
+
 
 export function App() {
-  // useEffect(() => {
-  //   (async () => {
-  //   const result = await api.get('/users/fafa1')
-  //   console.log(result.data)
-  // }
- 
-  // )()
-  // }, [ ])
   return (
     <div>
-      <Search />
+      <Router>
+        <Routes>
+          <Route exact path="/" element={<Search />} />
+          <Route exact path="/page-user" element={<InformationUser />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
