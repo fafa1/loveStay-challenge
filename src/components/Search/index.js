@@ -22,7 +22,8 @@ export const Search = () => {
   const submitSearch = async (e) => {
     e.preventDefault();
 
-    if(!name) return;
+    // ver o uso do trinm()
+    if(!name.trim()) return;
 
     try {
       const result = await handleData();
@@ -46,9 +47,13 @@ export const Search = () => {
               id="standard-basic"
               label="User"
               variant="standard"
+              inputProps={{ "data-testid": "input-element" }}
               value={name}
               onChange={(e) => setName(e.target.value)} />
-            <Button variant="contained" type="submit">Search</Button>
+            <Button
+              data-testid="button-element"
+              variant="contained"
+              type="submit">Search</Button>
           </div>
         </form>
 
