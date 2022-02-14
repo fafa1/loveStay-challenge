@@ -15,7 +15,7 @@ Para realizar as requisições da API do gitbub foi utilizado o biblioteca __axi
 
 ### `npm start`
 
-Para rodar o projeto será necessário realizar o __clone__, nstalar os pactoes com __npm i__, 
+Para rodar o projeto será necessário realizar o __clone__, instalar os pactoes com __npm i__, 
 e executar o comando __npm start__.
 
 ### `npm test`
