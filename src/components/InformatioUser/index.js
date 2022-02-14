@@ -13,7 +13,7 @@ import { api } from '../../services/api';
 
 
 export const InformationUser = () => {
-  const informationUser = useSelector(state => state.information)
+  const informationUser = useSelector(state => state.information);
 
   const [listRepos, setListRepo] = useState([]);
 
@@ -34,32 +34,31 @@ export const InformationUser = () => {
       }
     }
 
-    getListRepositoies()
+    getListRepositoies();
   }, [])
   return (
     <>
       <Box sx={{ flexGrow: 1 }}>
         <Grid container spacing={2}>
-          <Grid item xs={12} style={{ background: '#fefefe' }}>
+          <Grid item xs={12} className={styles.ConainerGrid}>
             <Card sx={{ minWidth: 275 }} >
               <CardContent className={styles.cardBody}>
                 <Typography sx={{ fontSize: 16 }} color="text.secondary" gutterBottom>
-                  Nome: <span style={{ fontWeight: 'bold' }}> {informationUser?.name} </span>
+                  Nome: <span> {informationUser?.name} </span>
                 </Typography>
                 <Typography sx={{ mb: 1.5 }} color="text.secondary" gutterBottom>
-                  Trabalhar na empresa: <span style={{ fontWeight: 'bold' }} >{informationUser?.company}</span>
+                  Trabalhar na empresa: <span >{informationUser?.company}</span>
                 </Typography>
                 <Typography variant="body2" gutterBottom>
                   Biografia:
-                  <span style={{ fontWeight: 'bold' }}> {informationUser?.bio}</span>
-
+                  <span> {informationUser?.bio}</span>
                 </Typography>
                 <Typography variant="body2" gutterBottom>
-                  <span>Repositório públicos</span>: <span style={{ fontWeight: 'bold' }}>{informationUser?.public_repos}</span>
+                  Repositório públicos: <span>{informationUser?.public_repos}</span>
                 </Typography>
                 <Typography variant="body2">
-                  <span>Localização: </span>
-                  {informationUser?.location}
+                  Localização:
+                  <span>{informationUser?.location}</span>
                 </Typography>
 
                 <p>List Repositories:</p>
@@ -69,19 +68,16 @@ export const InformationUser = () => {
                     return (
                       <Typography key={index} variant="body2">
                         <br />
-                        Name: <span style={{ fontWeight: 'bold' }}>{value?.name}</span>
+                        Name: <span>{value?.name}</span>
                         <br />
                         {value?.description &&
-                          <span>
-                            Description: <span style={{ fontWeight: 'bold' }}>{value?.description}</span>
-                          </span>
-
+                          <>
+                            Description: <span>{value?.description}</span>
+                          </>
                         }
                       </Typography>
-
                     )
                   })
-
                 }
 
               </CardContent>
@@ -89,7 +85,6 @@ export const InformationUser = () => {
                 <Link className={styles.LinkBack} to="/">Voltar</Link>
               </CardActions>
             </Card>
-
           </Grid>
         </Grid>
       </Box>
